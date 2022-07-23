@@ -14,7 +14,7 @@ class ForosController extends Controller
     {
         $dudas = DB::table('dudas')
             ->select('dudas.titulo', 'dudas.fecha', 'dudas.id')
-            ->orderBy('dudas.fecha')
+            ->orderByDesc('dudas.fecha')
             ->simplePaginate(10);
         $viewData = [];
         $viewData["titulo"] = "Foros Publicos";

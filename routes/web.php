@@ -124,7 +124,7 @@ Route::middleware(['maestro', 'auth'])->group(function () {
 
     //Route::post('/Maestro/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardar')->name("maestros.leccion.guardar");
 
-    
+
 
 });
 

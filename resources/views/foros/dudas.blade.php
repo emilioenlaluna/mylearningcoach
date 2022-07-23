@@ -53,14 +53,13 @@
 
                     <div class="card-body">
                         <h6
-                            class="display-6">{{ $duda->titulo }}</h6>
+                            class="display-6"><strong>{{ $duda->titulo }}</strong></h6>
                         <p>{{ $duda->fecha }}</p>
                         <a href="{{ route('foros.duda', ['id'=> $duda->id]) }}"
                            class="btn bg-primary text-white">Ver Respuestas</a>
                     </div>
                 </div>
             </div>
-            <hr class="my-4">
         @endforeach
         <hr class="my-4">
         @if(!empty($dudas))

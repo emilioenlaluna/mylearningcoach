@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Maestro\Alumnos;
+namespace App\Http\Controllers\Maestro\Cursos;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -16,25 +16,25 @@ class MaestroCursosController extends Controller
     public function index()
     {
         $hijos = DB::table('cursos')
-            ->select('cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.imagenUrl', 'cursos.Visible')
+            ->select('cursos.idCurso','cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.imagenUrl', 'cursos.Visible')
             ->where('cursos.users_id', '=', Auth::id())
             ->get();
         $viewData = [];
-        $viewData["title"] = "Gestionar Alumnos";
-        $viewData["alumno"] = json_decode($hijos, true);
-        return view('maestro.gestionalumnos')->with("viewData", $viewData);
+        $viewData["title"] = "Gestionar Cursos";
+        $viewData["cursos"] = json_decode($hijos, true);
+        return view('maestro.cursos')->with("viewData", $viewData);
     }
 
     public function guardar(Request $request)
     {
-        DB::table('users')->insert([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-            'users_id' => Auth::id(),
-            'puntos' => 0,
-            'rol_idrol' => 4,
-            'created_at' => now()
+        DB::table('cursos')->insert([
+            'NombreCurso' => $request->input('name'),
+            'FechaInicio' => $request->input('fechainicio'),
+            'FechaFin' => $request->input('fechafin'),
+            'Visible' => $request->input('visible'),
+            'imagenUrl' => $request->input('url'),
+            'Categoria_idCategoria' => $request->input('categoria'),
+            'users_id' => Auth::id()
         ]);
         return back();
     }

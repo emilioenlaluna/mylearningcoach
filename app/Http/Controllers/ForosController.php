@@ -54,5 +54,15 @@ class ForosController extends Controller
         return back();
     }
 
+    public function preguntar(Request $request){
+        DB::table('dudas')->insert([
+            'titulo' => $request->input('titulo'),
+            'mensaje' => $request->input('mensaje'),
+            'fecha' => now(),
+            'users_id' => Auth::id(),
+            'solucionada' => 0,
+        ]);
+        return back();
+    }
 
 }

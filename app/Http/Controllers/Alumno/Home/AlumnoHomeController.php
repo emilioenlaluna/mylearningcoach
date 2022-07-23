@@ -29,7 +29,7 @@ class AlumnoHomeController extends Controller
         $viewData["title"] = "Alumno -My Learning Coach";
         $cursos = DB::table('inscripcion')
             ->join('cursos', 'inscripcion.Curso_idCurso', '=', 'cursos.idCurso')
-            ->select('cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.idCurso')
+            ->select('cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.idCurso','cursos.imagenUrl')
             ->where('inscripcion.users_id', Auth::id())
             ->get();
         $viewData["cursosAlumno"] = json_decode($cursos, true);

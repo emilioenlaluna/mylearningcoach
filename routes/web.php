@@ -118,9 +118,9 @@ Route::middleware(['maestro', 'auth'])->group(function () {
 
     Route::post('/Maestro/Cursos/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroCursosController@guardar')->name("maestro.cursos.guardar");
 
-    Route::get('/Maestro/Cursos/Leccion/{id}', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
+    Route::get('/Maestro/Cursos/Leccion/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@leccion')->name("maestro.cursos.leccion");
 
-    Route::post('/Maestro/Cursos/Leccion/Guardar', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
+    Route::post('/Maestro/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardar')->name("maestros.leccion.guardar");
 
 
 });

@@ -28,7 +28,8 @@
                         <div class="mb-3 row">
                             <label class=" col-md-auto col-form-label">Nombre de Usuario:</label>
                             <div class="col">
-                                <input required name="email" value="{{ old('email') }}" type="text" class="form-control">
+                                <input required name="email" value="{{ old('email') }}" type="text"
+                                       class="form-control">
                             </div>
                         </div>
                     </div>
@@ -38,14 +39,16 @@
                         <div class="mb-3 row">
                             <label class="col-md-auto col-form-label">Contraseña:</label>
                             <div class="col">
-                                <input required name="password" value="{{ old('password') }}" type="text" class="form-control">
+                                <input required name="password" value="{{ old('password') }}" type="text"
+                                       class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <button type="submit" class="btn btn-primary">Agregar</button>
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-success ms-auto" style="padding: 0.5em 3em">Agregar</button>
+                </div>
             </form>
         </div>
     </div>
@@ -69,7 +72,8 @@
                         <td>{{ $hijo["name"] }}</td>
                         <td>{{ $hijo["email"] }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{route('padres.hijos.editar', ['id'=> $hijo["id"]])}}">
+                            <a class="btn btn-primary" style="width: 100%"
+                               href="{{route('padres.hijos.editar', ['id'=> $hijo["id"]])}}">
                                 <i class="bi bi-pencil"></i>
                             </a>
                         </td>
@@ -77,7 +81,7 @@
                             <form action="{{ route('padres.hijos.borrar', $hijo["id"])}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger">
+                                <button class="btn btn-danger" style="width: 100%">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </form>

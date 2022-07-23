@@ -6,11 +6,11 @@
         <div class="card-header">
             Resumen Tareas:
         </div>
-        <div class="card-body">
+        <div class="card-body" id="card-tabla-dr">
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Pregunta</th>
+                    <th scope="col">No. Pregunta</th>
                     <th scope="col">Respuesta 1</th>
                     <th scope="col">Respuesta 2</th>
                     <th scope="col">Respuesta Correcta</th>

@@ -68,51 +68,52 @@
 <!-- Fin de la barra de navegación -->
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
-    <div class="container">
-        <a class="navbar-brand" href="{{route('home.index')}}">My Learning Coach</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>
-                <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>
-                <a class="nav-link active" href="{{ route('foros.todos') }}">Foros Publico</a>
-                @guest
-                    <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
-                    <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="padding: 0.5rem 0.7rem; background-color:#6E0E7D;">
+    <a class="navbar-brand" style="font-size: x-large" href="{{route('home.index')}}"><strong>My Learning Coach</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>
+            <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>
+            <a class="nav-link active" href="{{ route('foros.todos') }}">Foros Publico</a>
+            @guest
+                <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
+                <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
 
-                @else
-                    {{--                        <a class="nav-link active" href="{{ route('myaccount.orders') }}">Mis Cursos</a>--}}
-                    <form id="logout" action="{{ route('logout') }}" method="POST">
-                        <a role="button" class="nav-link active"
-                           onclick="document.getElementById('logout').submit();">Cerrar Sesión</a>
-                        @csrf
-                    </form>
+            @else
+                {{--                        <a class="nav-link active" href="{{ route('myaccount.orders') }}">Mis Cursos</a>--}}
 
-                    @padres
-                    <a class="nav-link active" href="{{route('padres.home.dashboard')}}">Menu Padres</a>
-                    @endpadres
 
-                    @maestro
-                    <a class="nav-link active" href="{{route('maestro.home.dashboard')}}">Menu Maestro</a>
-                    @endmaestro
+                @padres
+                <a class="nav-link active" href="{{route('padres.home.dashboard')}}">Menu Padres</a>
+                @endpadres
 
-                    @tutor
-                    <a class="nav-link active">Menu Tutor</a>
-                    @endtutor
+                @maestro
+                <a class="nav-link active" href="{{route('maestro.home.dashboard')}}">Menu Maestro</a>
+                @endmaestro
 
-                    @alumno
-                    <a class="nav-link active" href="{{route('alumno.dashboard')}}">Menu Alumno</a>
-                    @endalumno
-                @endguest
-            </div>
+                @tutor
+                <a class="nav-link active">Menu Tutor</a>
+                @endtutor
+
+                @alumno
+                <a class="nav-link active" href="{{route('alumno.dashboard')}}">Menu Alumno</a>
+                @endalumno
+
+                <form id="logout" action="{{ route('logout') }}" method="POST">
+                    <a role="button" class="nav-link active"
+                       onclick="document.getElementById('logout').submit();">Cerrar Sesión</a>
+                    @csrf
+                </form>
+
+            @endguest
         </div>
     </div>
 </nav>
-<header class="masthead bg-primary text-white text-center py-4">
+<header class="masthead  text-white text-center py-3" style="background-color:#B014B5;">
     <div class="container d-flex align-items-center flex-column">
         <h2>@yield('subtitulo', 'Una plataforma de aprendizaje')</h2>
     </div>

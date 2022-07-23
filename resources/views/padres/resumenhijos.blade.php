@@ -5,7 +5,7 @@
         <div class="card-header">
             Ver Resumen de Hijos
         </div>
-        <div class="card-body">
+        <div class="card-body" style="padding: 8px">
             Seleccione un hijo para ver detalles.
             <table class="table table-bordered table-striped">
                 <thead>
@@ -19,7 +19,7 @@
                     <tr>
                         <td>{{ $hijo["name"] }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{route('padres.hijos.detalle', ['id'=> $hijo["id"]])}}">
+                            <a class="btn btn-primary" style="width: 100%; height:100%;" href="{{route('padres.hijos.detalle', ['id'=> $hijo["id"]])}}">
                                 <i class="bi-pencil"></i> Ver Resumen
                             </a>
                         </td>

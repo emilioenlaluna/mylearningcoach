@@ -54,6 +54,18 @@ hr {
 .m-d{
     margin: 3rem;
 }
+#card-tabla-dr{
+    overflow-x: auto;
+}
+@media only screen and (max-width: 773px) {
+    #card-tabla-dr{
+        padding: 10px;
+        font-size: medium;
+    }
+    .m-d{
+        margin: 2.5rem;
+    }
+}
 @media only screen and (max-width: 575px) {
     #bar{
         padding-bottom: 2em;
@@ -77,6 +89,10 @@ hr {
         padding: 5px;
         font-size: x-small;
     }
+    #card-tabla-dr{
+        padding: 5px;
+        font-size: small;
+    }
 }
 @media only screen and (max-width: 330px) {
     td  .btn{
@@ -89,5 +105,8 @@ hr {
     #card-tabla-a{
         padding: 5px;
         font-size: x-small !important;
+    }
+    #card-tabla-dr{
+        font-size: x-small;
     }
 }

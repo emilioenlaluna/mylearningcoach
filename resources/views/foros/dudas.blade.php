@@ -4,7 +4,7 @@
 @section('contenido')
 
     <div class="container my-4">
-       
+
             @foreach ($dudas as $duda)
             <div class="row">
                     <div class="card">
@@ -20,9 +20,9 @@
                 </div>
                 <hr class="my-4">
             @endforeach
-            <hr class="my-4">
+
             @if(!empty($dudas))
-                {{ $dudas->links() }}
+                    <div class="d-flex justify-content-center"> {{ $dudas->links() }} </div>
             @endif
         </div>
     </div>

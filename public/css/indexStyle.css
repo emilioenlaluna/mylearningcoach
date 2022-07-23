@@ -74,6 +74,11 @@ body{
         margin-top: 2vh;
     }
 }
+@media only screen and (min-width: 991px){
+    .nav-link{
+        margin-bottom: 0px !important;
+    }
+}
 @media only screen and (max-width: 575px){
     #btn-sub{
         margin-top: 1.5vh;

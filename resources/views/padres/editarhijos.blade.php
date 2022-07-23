@@ -18,19 +18,19 @@
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="row">
+                    <div class="row row-cols-1 row-cols-sm-2">
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                <label class=" col-md-auto col-form-label">Nombre completo:</label>
+                                <div class="col">
                                     <input name="name" value="{{ $hijo['name'] }}" type="text" class="form-control" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre Acceso Alumno:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                <label class=" col-md-auto col-form-label">Nombre de Usuario:</label>
+                                <div class="col">
                                     <input name="email" value="{{ $hijo['email'] }}" type="text" class="form-control" required>
                                 </div>
                             </div>
@@ -39,17 +39,16 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nueva Contraseña:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                <label class="col-md-auto col-form-label">Nueva Contraseña:</label>
+                                <div class="col">
                                     <input class="form-control" type="password" required id="password" name="password">
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            &nbsp;
-                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-success ms-auto" style="padding: 0.5em 3em">Editar</button>
+                    </div>
                 </form>
             @endforeach
     </div>

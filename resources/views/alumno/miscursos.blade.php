@@ -57,7 +57,7 @@
             @foreach ($viewData["cursosAlumno"] as $curso)
                 <div class="col esp centroH">
                     <div class="card tarjeta">
-                        <a href="#"><img src="{{ asset('/img/Cursos/arte-artesania.jpg') }}" class="card-img-top" alt="Artesania"></a>
+                        <img src="{{$curso["imagenUrl"]}}" class="card-img-top img-card">
                         <div class="card-body">
                             <h5 class="card-title">{{$curso["NombreCurso"]}}</h5>
                             <h6 class="card-title">Profesor Juan Rodolfo Pérez</h6>

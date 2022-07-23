@@ -8,12 +8,12 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ asset('/img/Cursos/espanol.jpg')}}" class="img-fluid rounded-start">
+                        <img src="{{ $curso->imagenUrl}}" class="img-fluid rounded-start">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
-                                {{ $curso->NombreCurso}} (${{ $curso->FechaInicio }})
+                                 (${{ $curso->FechaInicio }})
                             </h5>
                             <p class="card-text">{{ $curso->FechaFin }}</p>
                             <p class="card-text">

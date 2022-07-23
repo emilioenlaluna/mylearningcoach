@@ -5,7 +5,7 @@
     <div class="row justify-content-center align-content-center" style="min-height: 50vh; width: 100%">
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header"><b>{{ __('Reset Password') }}</b></div>
+                <div class="card-header"><b>{{ __('Credenciales Perdidas') }}</b></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo Electronico') }}</label>
 
                             <div class="col-md-7">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -34,7 +34,7 @@
                         <div class="row mb-0">
                             <div class="col-md-7 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Enviar Correo para cambio de credenciales') }}
                                 </button>
                             </div>
                         </div>

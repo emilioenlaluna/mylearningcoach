@@ -15,9 +15,9 @@ class MaestroCursosController extends Controller
 
     public function index()
     {
-        $hijos = DB::table('users')
-            ->select('users.id', 'users.name', 'users.email')
-            ->where('users.users_id', '=', Auth::id())
+        $hijos = DB::table('cursos')
+            ->select('cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.imagenUrl', 'cursos.Visible')
+            ->where('cursos.users_id', '=', Auth::id())
             ->get();
         $viewData = [];
         $viewData["title"] = "Gestionar Alumnos";
@@ -38,8 +38,6 @@ class MaestroCursosController extends Controller
         ]);
         return back();
     }
-
-
 
 
 }

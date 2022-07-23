@@ -1,0 +1,110 @@
+html,body{
+    overflow-x: hidden;
+}
+body{
+    background-color: #f5f8f9;
+}
+.row{
+    overflow-y: hidden;
+}
+.borde-derecho{
+    border-right: 2px solid rgba(0, 0, 0, 0.7);
+}
+.esp{
+    padding-top: 2vh;
+    padding-left: 3vw;
+}
+.centroH{
+    display: flex;
+    justify-content: center;
+}
+.tarjeta{
+    width: 254px; 
+    height: 408px;
+    font-size: medium;
+}
+.btn-cafe{
+    background-color: #8C3D20;
+    border-color: #83391e;
+    color: white;
+}
+.btn-cafe:hover{
+    background-color: #76341c;
+    border-color: #602b17;
+    color: white;
+}
+.activo{
+    z-index: 2 !important;
+    color: white !important;
+    background-color: #76341c !important;
+    border-color: #602b17;
+}
+.list-group-item{
+    transition: 0.3s;
+}
+#actividades{
+    margin-right: 2vw;
+}
+#piecito{
+    margin-top: 5vh;
+    height:  10vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+@media only screen and (max-width:1034px) {
+    .borde-derecho{
+        border:none;
+    }
+    #actividades{
+        padding-top: 3vh;
+        margin-left: 2vw;
+    }
+}
+@media only screen and (max-width:1184px){
+    .tarjeta{
+        width: 324px; 
+        height: 428px;
+    }
+}
+@media only screen and (max-width:947px){
+    .tarjeta{
+        width: 344px; 
+        height: 458px;
+    }
+}
+@media only screen and (max-width:750px){
+    .tarjeta{
+        width: 504px; 
+        height: 598px;
+        font-size: larger;
+    }
+    .tarjeta  h5{
+        font-size: xx-large;
+    }
+    .tarjeta  h6{
+        font-size: x-large;
+    }
+}
+@media only screen and (max-width:539px){
+    .tarjeta{
+        margin: 1vh 2vw;
+        height: fit-content;
+    }
+
+}
+@media only screen and (max-width:320px){
+    .tarjeta{
+        font-size: medium;
+    }
+    .tarjeta  h5{
+        font-size: x-large;
+    }
+    .tarjeta  h6{
+        font-size: large;
+    }
+
+}
+
+/* Conserva una buena presentacion con patallas de minimo 265px de ancho */

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@600&display=swap');
+
+body {
+    height: 100vh;
+    background-image: url("../Imagenes/fondos/fondoSignup.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media only screen and (max-height:775px){
+    body{
+        height: 110vh;
+    }
+    
+}
+@media only screen and (max-height:710px){
+    body{
+        height: 115vh;
+    }
+    
+}
+@media only screen and (max-height:680px){
+    body{
+        height: 120vh;
+    }
+    
+}
+@media only screen and (max-height:610px){
+    body{
+        height: 125vh;
+    }
+    
+}
+.margen {
+    margin: 3vh 5vw 5vh;
+    padding: 2vh 1vw;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.err {
+    font-family: 'Arima', cursive;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.ojo{
+    position: relative;
+}
+.icon-ojito{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s ease all;
+    cursor:pointer;
+}
+.icon-ojito:hover{
+    color: #8C3D20;
+}

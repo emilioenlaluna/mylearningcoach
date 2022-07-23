@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@600&family=Nunito:wght@600&display=swap');
+html,body{
+    overflow-x: hidden;
+}
+body{
+    font-size: large;
+}
+.carousel-item {
+    height: 70vh;
+    background-color: black;
+}
+.overlay-image{
+    position:absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+    top:0;
+    background-position:center center;
+    background-size: cover;
+    opacity: 0.8;
+}
+.contenedor{
+    margin: 4vh 4vw 0px;
+}
+.familyArima{
+    font-family: 'Arima', cursive;
+}
+#cuentas{
+    font-size: xx-large;
+    text-decoration: underline dotted blueviolet;
+}
+.cabecera{
+    color: white;
+    font-size: xx-large;
+    border-radius: 2px;
+}
+.loginCuentas{
+    margin-left: 1%; margin-right: 1%;
+    background-color: #F6FAF0;
+    position: relative;
+    padding-bottom: 3vh;
+}
+.loginCuentas::after{
+ position: absolute;
+ top:0px;
+ left:0px;
+ content:'';
+ background: linear-gradient(to right, #01684A, #ffffff, #CE1127);
+ width:100%;
+ height: 100%;
+ filter:blur(20px);
+ z-index: -1;
+}
+.vinculoCuenta{
+    text-decoration: none;
+    color: black;
+}
+.textoCuentas{
+    margin-top: 4%;
+    font-family: 'Nunito', sans-serif;
+}
+.cuadroImagen{
+    width: 15vmax;
+    height: 15vmax;
+    background-position:center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+.mg-top{
+    margin-top: 5vh;
+}
+@media only screen and (min-width: 1200px) {
+    .mg-top{
+        margin-top: 2vh;
+    }
+}
+@media only screen and (max-width: 575px){
+    #btn-sub{
+        margin-top: 1.5vh;
+    }
+}
+

@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 !important;
+    background-color: #f8f9fc;
+}
+.copyright {
+    margin-top: auto;
+    background-color: #1a252f;
+}
+
+.fixed {
+    -ms-flex: 0 0 250px;
+    flex: 0 0 250px;
+}
+
+.content-grey {
+    background-color: #f8f9fc;
+}
+
+hr {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+}
+
+.profile-font {
+    color: #858796 !important;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+.contenido{
+    height: 100vh;
+    margin: 0px;
+}
+.nav-link{
+    margin-bottom: 1vh;
+}
+#btn-menu{
+    position: absolute;
+    top:5px;
+    left: 10px;
+}
+.m-d{
+    margin: 3rem;
+}
+@media only screen and (max-width: 575px) {
+    #bar{
+        padding-bottom: 2em;
+    }
+    .contenido{
+        height: max-content;
+    }
+    .m-d{
+        margin: 2rem;
+    }
+    #card-tabla-a{
+        padding: 10px;
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 400px){
+    .m-d{
+        margin: 0.5rem;
+    }
+    #card-tabla-a{
+        padding: 5px;
+        font-size: x-small;
+    }
+}
+@media only screen and (max-width: 330px) {
+    td  .btn{
+        padding: 3px 6px;
+    }
+    #card-tabla-p{
+        padding: 5px;
+        font-size: small;
+    }
+    #card-tabla-a{
+        padding: 5px;
+        font-size: x-small !important;
+    }
+}

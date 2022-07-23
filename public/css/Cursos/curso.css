@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@600&family=Nunito:wght@600&display=swap');
+
+body {
+    background-color: #f5f8f9;
+}
+
+.familyArima {
+    font-family: 'Arima', cursive;
+}
+
+#tituloCurso {
+    color: white;
+    background-color: #519883;
+    padding-top: 85px;
+    padding-left: 2vw;
+    padding-bottom: 2vh;
+    position: relative;
+}
+
+.derechaABS {
+    position: absolute;
+    right: 1vw;
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+#navPan {
+    background-color: #d0cfcf;
+    padding-left: 2vw;
+    padding-top: 0.5em;
+    padding-bottom: 0.01em;
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+}
+
+.tarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    margin-bottom: 2vh;
+}
+
+h3>a {
+    color: black;
+}
+
+.tituloTarea {
+    border-bottom: 2px dashed black;
+    margin-bottom: 1.5vh;
+    padding-bottom: 0.5vh;
+    position: relative;
+}
+
+.btn-foro {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: medium;
+}
+
+.chat {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.comentario {
+    border: 2px solid #dde1e2;
+    background-color: #f5f8f9;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 1vh;
+    width: fit-content;
+    max-width: 85%;
+}
+
+.nomUsuario {
+    text-decoration: none;
+    color: black;
+}
+
+.nomUsuario:hover,
+h3>a:hover {
+    color: #76341c;
+}
+
+.tuComentario {
+    color: white;
+    background-color: #01684A;
+    border: 2px solid #013c2c;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 1vh;
+    width: fit-content;
+    max-width: 80%;
+
+}
+
+.publi {
+    font-size: xx-small;
+    opacity: 0.8;
+}
+
+.btn-outline-info:hover {
+    color: white;
+}
+
+.sticky {
+    position: sticky;
+    top: 30%;
+}
+
+#piecito{
+    margin-top: 5vh;
+    height:  10vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+@media only screen and (max-width:560px) {
+    .btn-foro {
+        position: static;
+        width: 100%;
+        margin: 5px 0px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    #actividades{
+        border-right: none !important;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.522);
+    }
+    .sticky{
+        position: static;
+        margin-top: 2vh;
+    }
+}
+
+@media only screen and (max-width:325px) {
+    .derechaABS {
+        position: static;
+        margin-top: 5px;
+    }
+}

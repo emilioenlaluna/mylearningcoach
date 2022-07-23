@@ -33,7 +33,22 @@ class AlumnoCursosController extends Controller
 
     public function leccion($id)
     {
-
+        $entradasforo = DB::table('entradaforoleccion')
+        ->join('users', 'inscripcion.users_id', '=', 'users.id')
+        ->select('entradaforoleccion.mensaje',
+            'users.name',
+            'entradaforoleccion.fecha',
+            'users.id',
+            'inscripcion.inscripcionId')
+        ->where('entradaforoleccion.foroleccion_idForoLeccion', $id)
+        ->orderBy('entradaforoleccion.fecha')
+        ->get();
+    $viewData = [];
+    $viewData["titulo"] = "Alumno -My Learning Coach";
+    $viewData["entradaforo"] = json_decode($entradasforo, true);
+    $viewData["idAlumno"] = Auth::id();
+    $viewData["idForo"] = $id;
+    return view('alumno.foroleccion')->with("viewData", $viewData);
     }
 
     public function foroLeccion($id)

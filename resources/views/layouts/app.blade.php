@@ -79,9 +79,11 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>
                 <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>
+                <a class="nav-link active" href="{{ route('foros.todos') }}">Foros Publico</a>
                 @guest
                     <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
                     <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
+
                 @else
                     {{--                        <a class="nav-link active" href="{{ route('myaccount.orders') }}">Mis Cursos</a>--}}
                     <form id="logout" action="{{ route('logout') }}" method="POST">

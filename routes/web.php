@@ -32,6 +32,8 @@ Route::get('/Categorias/{id}/Cursos', 'App\Http\Controllers\CursosController@cur
 Route::get('/DatalleCurso/{id}', 'App\Http\Controllers\CursosController@detalles')->name("cursos.detalles");
 
 
+
+
 /* *******************************************
  * USUARIO
  ******************************************** */
@@ -69,6 +71,9 @@ Route::middleware(['alumno'])->group(function () {
 
     Route::post('/alumno/miscursos/curso/leccion/foro/mensaje', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@enviarMensaje')->name('alumno.curso.foro.enviarMensaje');
 
+    Route::get('/alumno/miscursos/curso/leccion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@leccion')->name('alumno.curso.leccion');
+
+    Route::get('/alumno/miscursos/curso/evaluacion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@evaluacion')->name('alumno.curso.evaluacion');
 
 });
 
@@ -116,6 +121,10 @@ Route::middleware(['maestro', 'auth'])->group(function () {
     Route::get('/Maestro/Alumno/{id}/Editar', 'App\Http\Controllers\Maestro\Alumnos\MaestroAlumnosController@editar')->name("maestro.alumnos.editar");
 
     Route::put('/Maestro/Alumno/{id}/Actualizar', 'App\Http\Controllers\Maestro\Alumnos\MaestroAlumnosController@actualizar')->name("maestro.alumnos.actualizar");
+
+    Route::get('/Maestro/Alumno/{id}/Editar', 'App\Http\Controllers\Maestro\Alumnos\MaestroAlumnosController@editar')->name("maestro.alumnos.editar");
+
+    Route::get('/Maestro/Alumno/Cursos', 'App\Http\Controllers\Maestro\Alumnos\MaestroCursosController@cursos')->name("maestro.cursos");
 
 
 
@@ -165,6 +174,22 @@ Route::middleware(['padres', 'auth'])->group(function () {
 
 
 });
+
+
+
+/* *******************************************
+ * FOROS PUBLICOS
+ ******************************************** */
+
+Route::get('/Foros', 'App\Http\Controllers\ForosController@foros')->name("foros.todos");
+
+Route::get('/Foro/{id}', 'App\Http\Controllers\ForosController@foro')->name("foros.duda");
+
+Route::middleware(['auth'])->group(function () {
+    //Route::get('/Foros', 'App\Http\Controllers\ForosController@foros')->name("foros.todos");
+    
+    Route::get('/Foro/Escribir', 'App\Http\Controllers\ForosController@escribir')->name("foros.escribir");
+    });
 
 
 /* *******************************************

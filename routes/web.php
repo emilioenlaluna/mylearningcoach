@@ -120,8 +120,11 @@ Route::middleware(['maestro', 'auth'])->group(function () {
 
     Route::get('/Maestro/Cursos/Leccion/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@leccion')->name("maestro.cursos.leccion");
 
-    Route::post('/Maestro/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardar')->name("maestros.leccion.guardar");
+    Route::get('/Maestro/Cursos/Material/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@material')->name("maestro.cursos.material");
 
+    //Route::post('/Maestro/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardar')->name("maestros.leccion.guardar");
+
+    
 
 });
 

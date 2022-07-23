@@ -12,17 +12,16 @@ use Illuminate\Support\Facades\Hash;
 class MaestroLeccionesController extends Controller
 {
 
-
-    public function index()
+    public function leccion($id)
     {
-        $hijos = DB::table('cursos')
-            ->select('cursos.idCurso','cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.imagenUrl', 'cursos.Visible')
-            ->where('cursos.users_id', '=', Auth::id())
+        $hijos = DB::table('leccion')
+            ->select('leccion.NombreLeccion','leccion.FechaLeccion', 'leccion.Detalles', 'leccion.idLeccion')
+            ->where('leccion.Curso_idCurso', '=', $id)
             ->get();
         $viewData = [];
-        $viewData["title"] = "Gestionar Cursos";
-        $viewData["cursos"] = json_decode($hijos, true);
-        return view('maestro.cursos')->with("viewData", $viewData);
+        $viewData["title"] = "Gestionar Lecciones";
+        $viewData["lecciones"] = json_decode($hijos, true);
+        return view('maestro.lecciones')->with("viewData", $viewData);
     }
 
     public function guardar(Request $request)

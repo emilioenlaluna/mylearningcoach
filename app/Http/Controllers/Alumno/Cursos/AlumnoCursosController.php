@@ -33,34 +33,19 @@ class AlumnoCursosController extends Controller
 
     public function leccion($id)
     {
-        $entradasforo = DB::table('entradaforoleccion')
-        ->join('users', 'inscripcion.users_id', '=', 'users.id')
-        ->select('entradaforoleccion.mensaje',
-            'users.name',
-            'entradaforoleccion.fecha',
-            'users.id',
-            'inscripcion.inscripcionId')
-        ->where('entradaforoleccion.foroleccion_idForoLeccion', $id)
-        ->orderBy('entradaforoleccion.fecha')
-        ->get();
-    $viewData = [];
-    $viewData["titulo"] = "Alumno -My Learning Coach";
-    $viewData["entradaforo"] = json_decode($entradasforo, true);
-    $viewData["idAlumno"] = Auth::id();
-    $viewData["idForo"] = $id;
-    return view('alumno.foroleccion')->with("viewData", $viewData);
+
     }
+
 
     public function foroLeccion($id)
     {
         $entradasforo = DB::table('entradaforoleccion')
-            //->join('inscripcion', 'entradaforoleccion.inscripcion_inscripcionId', '=', 'inscripcion.inscripcionId')
-            ->join('users', 'inscripcion.users_id', '=', 'users.id')
+            ->join('users', 'entradaforoleccion.users_id', '=', 'users.id')
             ->select('entradaforoleccion.mensaje',
                 'users.name',
                 'entradaforoleccion.fecha',
                 'users.id',
-                'inscripcion.inscripcionId')
+            )
             ->where('entradaforoleccion.foroleccion_idForoLeccion', $id)
             ->orderBy('entradaforoleccion.fecha')
             ->get();
@@ -78,9 +63,26 @@ class AlumnoCursosController extends Controller
             'foroleccion_idForoLeccion' => $request->input('idForo'),
             'mensaje' => $request->input('mensaje'),
             'fecha' => now(),
-            'inscripcion_inscripcionId' => $request->input('inscripcion'),
+            'users_id' => Auth::id()
         ]);
         return back();
+    }
+
+
+    public function inscribir(Request $request)
+    {
+        $inscrito = DB::table('inscripcion')
+            ->where('inscripcion.Curso_idCurso', $request->input('curso'))
+            ->where('inscripcion.users_id', Auth::id())
+            ->count();
+        if ($inscrito != 0) {
+            return redirect()->route('alumno.miscursos');
+        }
+        DB::table('inscripcion')->insert([
+            'Curso_idCurso' => $request->input('curso'),
+            'users_id' => Auth::id()
+        ]);
+        return redirect()->route('alumno.miscursos');
     }
 
 

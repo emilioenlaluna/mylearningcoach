@@ -59,11 +59,24 @@
 
                                         @alumno
                                         <div class="col-auto">
-                                            <button class="btn bg-primary text-white" type="submit">Ir A Mis Cursos
-                                            </button>
+                                            <form action="{{ route('alumno.inscribir',['id'=>$curso->idCurso])}}"
+                                                  method="POST">
+                                                @csrf
+                                                <button class="btn btn-outline-info" type="submit" >
+                                                    Inscribirme A Curso
+                                                </button>
+                                            </form>
                                         </div>
                                         @endalumno
                                     @endguest
+
+                                    @if($errors->any())
+                                        <ul class="alert alert-danger list-unstyled">
+                                            @foreach($errors->all() as $error)
+                                                <li>- {{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
 
                                 </div>
                             </form>

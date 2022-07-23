@@ -5,17 +5,19 @@
 
     <div class="container my-4">
 
+        @foreach($viewData["duda"] as $pregunta)
         <div class="card">
             <div class="card-title">
-                <h6}
-                    class="display-6">{{ $duda[titulo] }}</h6>
+                <h6
+                    class="display-6">{{ $pregunta["titulo"] }}</h6>
             </div>
             <div class="card-body">
-                <p>{{ $duda->fecha }}</p>
+                <p>{{ $pregunta["fecha"] }}</p>
                 <hr class="my-4">
-                <p>{{ $duda->mensaje }}</p>
+                <p>{{ $pregunta["mensaje"] }}</p>
             </div>
         </div>
+        @endforeach
 
         <div class="card">
             <div class="card-title">
@@ -27,6 +29,8 @@
                 @else
                     <form action="{{ route('foros.escribir')}}" method="POST">
                         @csrf
+                        <input type="hidden" name="dudaId" value="{{$viewData["dudaId"]}}">
+                        <input type="text" name="titulo">
                         <input type="text" name="mensaje" id="mensaje" class="form-control"
                                placeholder="Comparte tu respuesta aqui" required>
                         <button class="btn btn-outline-info" type="submit" id="button-addon2">
@@ -54,8 +58,8 @@
         @endforeach
 
         <hr class="my-4">
-        @if(!empty($dudas))
-            {{ $dudas->links() }}
+        @if(!empty($duda))
+            {{ $duda->links() }}
         @endif
     </div>
     </div>

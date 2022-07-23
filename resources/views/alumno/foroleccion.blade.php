@@ -38,9 +38,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav justyfy-content-end">
-                    @if(Auth::guard('alumno')->check())
-                        <a class="nav-link active" href="{!! url('/alumno/dashboard'); !!}">Alumno</a>
-                    @endif
+                    @alumno
+                    <a class="nav-link active" href="{!! url('/alumno/dashboard'); !!}">Alumno</a>
+                    @endalumno
                 </ul>
             </div>
         </div>
@@ -63,7 +63,6 @@
                                 <div class="publi">{{$entrada["fecha"]}}</div>
                             </div>
                         </div>
-                        <input type="hidden" name="inscripcion" value="{{$entrada["inscripcionId"]}}">
                     @else
                         <!-- comentario -->
                         <div class="comentario">

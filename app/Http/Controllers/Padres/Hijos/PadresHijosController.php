@@ -70,6 +70,23 @@ class PadresHijosController extends Controller
     }
 
 
+    public function inscribir(Request $request)
+    {
+        $inscrito = DB::table('inscripcion')
+            ->where('inscripcion.Curso_idCurso', $request->input('curso'))
+            ->where('inscripcion.users_id', $request->input('hijo'))
+            ->count();
+        if ($inscrito != 0) {
+            return back()->with('errors','Alumno Ya Inscrito');
+        }
+
+        DB::table('inscripcion')->insert([
+            'Curso_idCurso' => $request->input('name'),
+            'users_id' => $request->input('email')
+        ]);
+
+        return redirect()->route('padres.hijos.index');
+    }
 
 
 }

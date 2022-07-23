@@ -49,6 +49,7 @@ class CursosController extends Controller
         $viewData["titulo"] = " - My Learning Coach";
         $viewData["subtitulo"] = " - Información del Curso";
         $viewData["curso"] = $curso;
+
         return view('cursos.detalles')->with("viewData", $viewData);
     }
 

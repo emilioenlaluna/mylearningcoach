@@ -32,8 +32,6 @@ Route::get('/Categorias/{id}/Cursos', 'App\Http\Controllers\CursosController@cur
 Route::get('/DatalleCurso/{id}', 'App\Http\Controllers\CursosController@detalles')->name("cursos.detalles");
 
 
-
-
 /* *******************************************
  * USUARIO
  ******************************************** */
@@ -74,6 +72,9 @@ Route::middleware(['alumno'])->group(function () {
     Route::get('/alumno/miscursos/curso/leccion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@leccion')->name('alumno.curso.leccion');
 
     Route::get('/alumno/miscursos/curso/evaluacion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@evaluacion')->name('alumno.curso.evaluacion');
+
+    Route::post('/alumno/inscribir/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@inscribir')->name('alumno.inscribir');
+
 
 });
 
@@ -127,7 +128,6 @@ Route::middleware(['maestro', 'auth'])->group(function () {
     Route::get('/Maestro/Alumno/Cursos', 'App\Http\Controllers\Maestro\Alumnos\MaestroCursosController@cursos')->name("maestro.cursos");
 
 
-
 //Route::get('/Maestro', 'App\Http\Controllers\Admin\MaestroController@index')->name("maestro.home.index");
 //Route::get('/Maestro/Cursos', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
 //Route::post('/Maestro/Cursos/Guardar', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
@@ -154,10 +154,6 @@ Route::middleware(['padres', 'auth'])->group(function () {
 
     Route::get('/Padres/Acerca', 'App\Http\Controllers\Padres\Home\PadresHomeController@about')->name("padres.home.about");
 
-//    Route::post('/Padres/InscripcionCurso/', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
-//
-//    Route::delete('/Padres/EliminarInscripcion/', 'App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
-
     Route::get('/Padres/Alumno/Inicio', 'App\Http\Controllers\Padres\Hijos\PadresHijosController@index')->name("padres.hijos.index");
 
     Route::post('/Padres/Alumno/Guardar', 'App\Http\Controllers\Padres\Hijos\PadresHijosController@guardar')->name("padres.hijos.guardar");
@@ -172,9 +168,10 @@ Route::middleware(['padres', 'auth'])->group(function () {
 
     Route::get('/Padres/Alumno/Detalle/{id}', 'App\Http\Controllers\Padres\Hijos\PadresResumenController@detalles')->name("padres.hijos.detalle");
 
+    Route::post('/Padres/InscripcionCurso/', 'App\Http\Controllers\Padres\Hijos\PadresHijosController@inscribir')->name("padres.inscribir");
+
 
 });
-
 
 
 /* *******************************************
@@ -186,10 +183,9 @@ Route::get('/Foros', 'App\Http\Controllers\ForosController@foros')->name("foros.
 Route::get('/Foro/{id}', 'App\Http\Controllers\ForosController@foro')->name("foros.duda");
 
 Route::middleware(['auth'])->group(function () {
-    //Route::get('/Foros', 'App\Http\Controllers\ForosController@foros')->name("foros.todos");
-    
-    Route::get('/Foro/Escribir', 'App\Http\Controllers\ForosController@escribir')->name("foros.escribir");
-    });
+
+    Route::post('/Foro/Escribir', 'App\Http\Controllers\ForosController@escribir')->name("foros.escribir");
+});
 
 
 /* *******************************************
@@ -197,14 +193,6 @@ Route::middleware(['auth'])->group(function () {
 ******************************************** */
 
 Route::middleware(['admin', 'auth'])->group(function () {
-
-//    Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
-//
-//    Route::get('/admin/Cursos', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
-//
-//    Route::delete('/admin/Cursos/{id}/delete', 'App\Http\Controllers\Admin\AdminProductController@delete')->name("admin.product.delete");
-//
-//    Route::put('/admin/Cursos/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
 
 });
 

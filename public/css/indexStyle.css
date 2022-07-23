@@ -69,6 +69,20 @@ body{
 .mg-top{
     margin-top: 5vh;
 }
+.card-cursos{
+    height: 100%;
+    padding-bottom: 3em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.btn-detalles{
+    width: 80%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 @media only screen and (min-width: 1200px) {
     .mg-top{
         margin-top: 2vh;

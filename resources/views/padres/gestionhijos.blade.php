@@ -18,7 +18,7 @@
                 <div class="row row-cols-1 row-cols-sm-2">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class=" col-md-auto col-form-label">Nombre completo:</label>
+                            <label class="col-md-auto col-form-label">Nombre completo:</label>
                             <div class="col">
                                 <input name="name" value="{{ old('name') }}" type="text" class="form-control" required>
                             </div>
